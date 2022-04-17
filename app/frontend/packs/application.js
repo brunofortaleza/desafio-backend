@@ -15,3 +15,6 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+// Add this line  
+import '../js/bootstrap_js_files.js'  
