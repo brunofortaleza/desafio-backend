@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-xs-12">
+    <%= image_tag "http://www.camara.leg.br/internet/deputado/bandep/#{@deputy.register_id}.jpg", width: '200px' %>
+    </div>
+    <div class="col-md-6 col-xs-12">
+      <p><strong>Nome:</strong> <%= @deputy.name %></p>
+      <p><strong>Registro:</strong> <%= @deputy.register_id %></p>
+      <p><strong>CPF:</strong> <%= @deputy.cpf %></p>
+      <p><strong>Número da Carteira:</strong> <%= @deputy.chair_number %></p>
+      <p><strong>Estado:</strong> <%= @deputy.state %></p>
+      <p><strong>Partido:</strong> <%= @deputy.political_party %></p>
+      <p><strong>Legislatura:</strong> <%= @deputy.legislature_id %></p>
+    </div>
+  </div>
+  <div class="row">
+    <p><strong>Somatório dos gastos R$:</strong> <%= sum_of_expenses %></p>
+    <p><strong>Maior despesa R$:</strong> <%= higher_expense %></p>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Data da Emissão</th>
+      <th>Fornecedor</th>
+      <th>Valor Líquido</th>
+      <th>URL do documento</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @expenses.each do |expense| %>
+      <tr>
+        <td><%= expense&.emission_date %></td>
+        <td><%= expense&.provider %></td>
+        <td><%= expense&.liquid_value %></td>
+        <td><%= link_to "Link", expense&.url_document if expense&.url_document&.present? %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

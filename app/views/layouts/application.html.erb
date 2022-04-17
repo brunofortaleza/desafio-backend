@@ -2,14 +2,31 @@
 <html>
   <head>
     <title>DesafioBackend</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href=<%= root_path %>>Início</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=<%= deputies_path %>>Deputados</a>
+        </li>
+      </ul>
+  </nav>
   </head>
 
   <body>
-    <%= yield %>
+  <main>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <%= yield %>
+      </div>
+    </section>
+  </main>
   </body>
 </html>

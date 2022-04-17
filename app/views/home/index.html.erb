@@ -1,13 +1,16 @@
-<h2>Ranking dos gastos dos Deputados</h2>
-<h3>Bem vindo ao ranking dos gastos dos deputados, aqui você poderá verificar os deputados que mais estão gastando no estado do Tocantins.
-    Baixe a fonte de dados e adicione o arquivo aqui.
-</h3>
-
-<div>Fonte de dados: <a href="https://dadosabertos.camara.leg.br/swagger/api.html#staticfile">Clique aqui</a>
+<div class="col-lg-6 col-md-8 mx-auto">
+  <h1 class="fw-light">Ranking dos gastos dos Deputados</h1>
+  <p class="lead text-muted">Bem vindo ao ranking dos gastos dos deputados, aqui você poderá verificar os deputados que mais estão gastando no
+    estado do Tocantins. Baixe a fonte de dados e adicione o arquivo aqui.</p>
+  <p>
+  <%= form_with url: import_file_path, local: true do |form| %>
+<!--          <label class="control-label">Photo</label>-->
+    <%= form.file_field :file %>
+    <%= form.submit "Adicionar Dados", class:"btn btn-primary my-2" %>
+    <a href="https://dadosabertos.camara.leg.br/swagger/api.html#staticfile" class="btn btn-secondary my-2">Fonte de dados</a>
+  <% end %>
+  </p>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <%= link_to 'Ver deputados', deputies_path, class:"btn btn-secondary" %>
+  </div>
 </div>
-
-<div>Adicione seu arquivo aqui</div>
-<%= form_with url: import_file_path, local: true do |form| %>
-  <%= form.file_field :file %>
-  <%= form.submit "Adicionar Dados" %>
-<% end %>

@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Deputados</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Nome</th>
+      <th>Registro</th>
+      <th>CPF</th>
+      <th>Número da Carteira</th>
+      <th>Estado</th>
+      <th>Partido</th>
+      <th>Legislatura</th>
+      <th colspan="3">Opções</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deputies.each do |deputy| %>
+      <tr>
+        <td><%= image_tag "http://www.camara.leg.br/internet/deputado/bandep/#{deputy&.register_id}.jpg" %></td>
+        <td><%= deputy&.name %></td>
+        <td><%= deputy&.register_id %></td>
+        <td><%= deputy&.cpf %></td>
+        <td><%= deputy&.chair_number %></td>
+        <td><%= deputy&.state %></td>
+        <td><%= deputy&.political_party %></td>
+        <td><%= deputy&.legislature_id %></td>
+        <td><%= link_to 'Visualizar', deputy %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>

@@ -50,8 +50,8 @@ class Populate::ImportDataFileService < ApplicationService
       batch: row[25]&.value,
       refund: row[26]&.value,
       restitution: row[27]&.value,
-      document_id: row[28]&.value,
-      url_document: row[29]&.value,
+      document_id: row[29]&.value,
+      url_document: row[30]&.value,
       expense_type_id: expense_type&.id,
       deputy_id: deputy&.id
     )
