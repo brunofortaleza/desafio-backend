@@ -16,26 +16,32 @@ Você já ouviu falar da CEAP? A Cota para o Exercício da Atividade Parlamentar
 
 Para rodar o projeto é necessário ter:
 
-  $ Ruby 2.6.5
-  $ Ruby on Rails 6.0.3
-  $ PostgreSQL
+  1. Ruby 2.6.5
+  2. Ruby on Rails 6.0.3
+  3. PostgreSQL
 
 ### Dependências
 
 Instalar as dependências necessárias
 
+```
   $ bundle install
   $ yarn install
+```
 
 ### Banco de dados
 
 Criar o banco de dados:
 
+```
   $ rails db:create
   $ rails db:migrate
+```
 
 ### Rodar a aplicação
 
 Com o ambiente configurado:
 
+```
   $ rails s
+```
