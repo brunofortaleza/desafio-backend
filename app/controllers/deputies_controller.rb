@@ -3,13 +3,13 @@ class DeputiesController < ApplicationController
 
   # GET /deputies or /deputies.json
   def index
-    @deputies = Deputy.all
+    @deputies = Deputy.all&.order(name: :asc)
   end
 
   # GET /deputies/1 or /deputies/1.json
   def show
     @deputy = set_deputy
-    @expenses = @deputy&.expenses
+    @expenses = @deputy&.expenses&.order(emission_date: :desc)
   end
 
   private

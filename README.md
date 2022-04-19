@@ -22,7 +22,7 @@ Para rodar o projeto é necessário ter:
 
 ### Dependências
 
-Instalar as dependências necessárias
+Instalar as dependências necessárias:
 
 ```
   $ bundle install

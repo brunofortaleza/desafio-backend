@@ -1,10 +1,9 @@
 <div class="col-lg-6 col-md-8 mx-auto">
   <h1 class="fw-light">Ranking dos gastos dos Deputados</h1>
   <p class="lead text-muted">Bem vindo ao ranking dos gastos dos deputados, aqui você poderá verificar os deputados que mais estão gastando no
-    estado do Tocantins. Baixe a fonte de dados e adicione o arquivo aqui.</p>
+    estado do Tocantins. Baixe a fonte de dados no formato <b>XLSX</b> e adicione o arquivo aqui.</p>
   <p>
   <%= form_with url: import_file_path, local: true do |form| %>
-<!--          <label class="control-label">Photo</label>-->
     <%= form.file_field :file %>
     <%= form.submit "Adicionar Dados", class:"btn btn-primary my-2" %>
     <a href="https://dadosabertos.camara.leg.br/swagger/api.html#staticfile" class="btn btn-secondary my-2">Fonte de dados</a>

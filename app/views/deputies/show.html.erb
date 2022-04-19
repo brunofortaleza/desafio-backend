@@ -16,8 +16,8 @@
     </div>
   </div>
   <div class="row">
-    <p><strong>Somatório dos gastos R$:</strong> <%= sum_of_expenses %></p>
-    <p><strong>Maior despesa R$:</strong> <%= higher_expense %></p>
+    <p><strong>Somatório dos gastos R$:</strong> <%= number_to_currency_br(sum_of_expenses) %></p>
+    <p><strong>Maior despesa R$:</strong> <%= number_to_currency_br(higher_expense) %></p>
   </div>
 
   <table class="table table-striped">
@@ -35,7 +35,7 @@
       <tr>
         <td><%= expense&.emission_date %></td>
         <td><%= expense&.provider %></td>
-        <td><%= expense&.liquid_value %></td>
+        <td><%= number_to_currency_br(expense&.liquid_value) %></td>
         <td><%= link_to "Link", expense&.url_document if expense&.url_document&.present? %></td>
       </tr>
     <% end %>
